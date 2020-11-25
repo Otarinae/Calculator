@@ -1,4 +1,20 @@
 body {
   font-family: "Oswald", sans-serif;
   background-color: #e5e5e5;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body > div {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
 }
