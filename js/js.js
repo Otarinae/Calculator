@@ -1,29 +1,29 @@
-let btn0 = document.getElementById("btn0");
-let btn1 = document.getElementById("btn1");
-let btn2 = document.getElementById("btn2");
-let btn3 = document.getElementById("btn3");
-let btn4 = document.getElementById("btn4");
-let btn5 = document.getElementById("btn5");
-let btn6 = document.getElementById("btn6");
-let btn7 = document.getElementById("btn7");
-let btn8 = document.getElementById("btn8");
-let btn9 = document.getElementById("btn9");
+const btn0 = document.getElementById("btn0");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.getElementById("btn3");
+const btn4 = document.getElementById("btn4");
+const btn5 = document.getElementById("btn5");
+const btn6 = document.getElementById("btn6");
+const btn7 = document.getElementById("btn7");
+const btn8 = document.getElementById("btn8");
+const btn9 = document.getElementById("btn9");
 
-let btnPlus = document.getElementById("btnPlus");
-let btnMinus = document.getElementById("btnMinus");
-let btnDivide = document.getElementById("btnDivide");
-let btnMultiply = document.getElementById("btnMultiply");
-let btnEqual = document.getElementById("btnEqual");
+const btnPlus = document.getElementById("btnPlus");
+const btnMinus = document.getElementById("btnMinus");
+const btnMultiply = document.getElementById("btnMultiply");
+const btnDivide = document.getElementById("btnDivide");
+const btnEqual = document.getElementById("btnEqual");
 
-let operand1;
+let firstOperand;
 let operator;
-let operand2;
+let secondOperand;
 
 function getOperand(event) {
-  if (operand1 !== undefined && operator !== undefined) {
-    operand2 = event.target.textContent;
+  if (firstOperand !== undefined && operator !== undefined) {
+    secondOperand = event.target.textContent;
   } else {
-    operand1 = event.target.textContent;
+    firstOperand = event.target.textContent;
   }
 }
 
@@ -32,10 +32,12 @@ function getOperator(event) {
 }
 
 function getResult() {
-  let result = eval(String(operand1) + String(operator) + String(operand2));
-  operand1 = undefined;
+  let result = eval(
+    String(firstOperand) + String(operator) + String(secondOperand)
+  );
+  firstOperand = undefined;
   operator = undefined;
-  operand2 = undefined;
+  secondOperand = undefined;
   console.log(result);
 }
 
@@ -52,6 +54,6 @@ btn9.addEventListener("click", getOperand);
 
 btnPlus.addEventListener("click", getOperator);
 btnMinus.addEventListener("click", getOperator);
-btnDivide.addEventListener("click", getOperator);
 btnMultiply.addEventListener("click", getOperator);
+btnDivide.addEventListener("click", getOperator);
 btnEqual.addEventListener("click", getResult);
