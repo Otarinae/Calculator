@@ -15,43 +15,43 @@ let btnDivide = document.getElementById("btnDivide");
 let btnMultiply = document.getElementById("btnMultiply");
 let btnEqual = document.getElementById("btnEqual");
 
-let operator1;
-let operand;
-let operator2;
+let operand1;
+let operator;
+let operand2;
 
-function getOperator(event) {
-  if (operator1 !== undefined && operand !== undefined) {
-    operator2 = event.target.textContent;
+function getOperand(event) {
+  if (operand1 !== undefined && operator !== undefined) {
+    operand2 = event.target.textContent;
   } else {
-    operator1 = event.target.textContent;
+    operand1 = event.target.textContent;
   }
 }
 
-function getOperand(event) {
-  operand = event.target.textContent;
+function getOperator(event) {
+  operator = event.target.textContent;
 }
 
 function getResult() {
-  let result = eval(String(operator1) + String(operand) + String(operator2));
-  operator1 = undefined;
-  operand = undefined;
-  operator2 = undefined;
+  let result = eval(String(operand1) + String(operator) + String(operand2));
+  operand1 = undefined;
+  operator = undefined;
+  operand2 = undefined;
   console.log(result);
 }
 
-btn0.addEventListener("click", getOperator);
-btn1.addEventListener("click", getOperator);
-btn2.addEventListener("click", getOperator);
-btn3.addEventListener("click", getOperator);
-btn4.addEventListener("click", getOperator);
-btn5.addEventListener("click", getOperator);
-btn6.addEventListener("click", getOperator);
-btn7.addEventListener("click", getOperator);
-btn8.addEventListener("click", getOperator);
-btn9.addEventListener("click", getOperator);
+btn0.addEventListener("click", getOperand);
+btn1.addEventListener("click", getOperand);
+btn2.addEventListener("click", getOperand);
+btn3.addEventListener("click", getOperand);
+btn4.addEventListener("click", getOperand);
+btn5.addEventListener("click", getOperand);
+btn6.addEventListener("click", getOperand);
+btn7.addEventListener("click", getOperand);
+btn8.addEventListener("click", getOperand);
+btn9.addEventListener("click", getOperand);
 
-btnPlus.addEventListener("click", getOperand);
-btnMinus.addEventListener("click", getOperand);
-btnDivide.addEventListener("click", getOperand);
-btnMultiply.addEventListener("click", getOperand);
+btnPlus.addEventListener("click", getOperator);
+btnMinus.addEventListener("click", getOperator);
+btnDivide.addEventListener("click", getOperator);
+btnMultiply.addEventListener("click", getOperator);
 btnEqual.addEventListener("click", getResult);
